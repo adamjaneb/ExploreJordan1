@@ -1,0 +1,45 @@
+.box {
+    background-color: #007bff;
+    height: 40px;
+}
+nav {
+    margin-top: -8px;
+    position: fixed;
+    width: 100%;
+    z-index: 1090;
+    top: 70px; 
+}
+.navbar-nav .nav-link:hover {
+    color: darkgoldenrod;
+}
+.navbar-nav .nav-link {
+    color: white;
+}
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        font-size: 12px; 
+        padding: 0 3px; 
+        height: 30px;
+    }
+    .box{
+        height: 24px;
+    }
+    nav {
+        top: 60px; 
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-nav .nav-link {
+        font-size: 10px; 
+        padding: 0 2px;
+    }
+    .box{
+        height: 24px;
+    }
+    nav {
+        top: 60px; 
+    }
+    
+}
+

@@ -31,4 +31,5 @@ export class BodyComponent implements OnInit{
   cancelImg : string = "assets/cancel.png";
   custom_packageImg : string = "assets/custom_package.png";
   loyalty_programImg : string = "assets/loyalty_program.jpg";
+  ajloun : string = "assets/ajloun.png";
 }

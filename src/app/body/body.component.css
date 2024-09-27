@@ -2,13 +2,16 @@
     margin-top: -36px;
 }
 
+.slideshow-image {
+    object-fit: cover;
+    height: 150px; 
+    object-position: 20% center;
+}
+
+/* Icon styles */
 .mg {
     width: 30px;
     height: auto;
-}
-
-p {
-    font-size: 10px;
 }
 
 .image-item {
@@ -16,12 +19,12 @@ p {
     margin-right: 10px;
 }
 
-.slideshow-image {
-    object-fit: cover;
-    height: 150px; 
-    object-position: 20% center;
+/* General text styles */
+p {
+    font-size: 10px;
 }
 
+/* Popular destinations styles */
 .popular-destinations {
     gap: 10px;
     margin: 20px 0;
@@ -48,6 +51,71 @@ p {
     filter: brightness(100%);
 }
 
+/* Cancellation text styles */
+.cancellation-text {
+    margin-top: 80px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    height: 120px;
+    text-align: center;
+    background-color: #c5dbf1;
+}
+
+/* Blog section styles */
+.blog-section h2 {
+    color: darkgoldenrod;
+    font-size: medium;
+}
+
+.blog-section .line {
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    margin: 10px auto;
+}
+
+.blog-post {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.blog-post h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.blog-post .date {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.blog-section p {
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.button {
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    background-color: darkgoldenrod;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: goldenrod;
+}
+
+/* Media queries for responsiveness */
 @media (min-width: 576px) {
     .slideshow {
         margin-top: -32px;
@@ -59,6 +127,9 @@ p {
     .destination-item {
         width: 160px;
         height: 80px;
+    }
+    .blog-post {
+        max-width: 300px;
     }
 }
 
@@ -76,6 +147,9 @@ p {
     .destination-item {
         width: 180px;
         height: 90px;
+    }
+    .blog-post {
+        max-width: 250px;
     }
 }
 
@@ -98,6 +172,9 @@ p {
         width: 200px;
         height: 100px;
     }
+    .blog-post {
+        max-width: 300px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -117,5 +194,8 @@ p {
     .destination-item {
         width: 270px;
         height: 140px;
+    }
+    .blog-post {
+        max-width: 350px;
     }
 }

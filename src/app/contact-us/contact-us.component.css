@@ -1,29 +1,37 @@
-main{
+main {
+    background-image: url('/assets/banner.png');
+    background-size: cover; 
+    background-position: center;
     margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .banner {
     position: relative;
+    width: 100%;
     margin-top: 120px;
 }
 
-.banner img{
+.banner img {
     width: 100%;
     height: auto;
-    position: relative;
+    object-fit: cover;
 }
 
 .contact-section {
     max-width: 800px;
-    width: 600px;
-    padding: 10px;
+    width: 90%;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.592);
-    position: absolute;
+    margin-top: -50px;
+    position: relative;
     z-index: 1;
-    top: 100px;
-    right: 27%;
+    text-align: center;
 }
 
 .contact-section h2 {
@@ -31,51 +39,23 @@ main{
 }
 
 .contact-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.support-content {
-    margin: 20px;
-}
-
-support-container {
-    height: 100px;
-}
-.contact-box,
-.support-container {
+.contact-box {
     width: 48%;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
-    height: 150px; 
     background-color: rgba(255, 255, 255, 0.592);
-    margin-top: 100px;
-    position: relative;
-}
-
-
-.contact-box p {
-    margin: 10px 0;
-}
-
-.contact-box img {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 10px;
-}
-
-.support-container img {
-    max-width: 100%;
-    width: auto;
-    height: 90px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .support-button {
@@ -88,15 +68,71 @@ support-container {
     font-size: 16px;
 }
 
+.support-button a {
+    text-decoration: none;
+    color: white;
+}
+
 .support-button:hover {
     background-color: #205a8d;
 }
 
 
-.contact-section {
-    top: 150px; 
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .banner {
+        margin-top: 80px;
+    }
+
+    .contact-section {
+        width: 95%;
+        margin-top: -30px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-.contact-container {
-    top: 60%; 
+@media screen and (max-width: 480px) {
+    main {
+        margin-top: 100px;
+    }
+
+    .banner {
+        margin-top: 60px;
+    }
+
+    .contact-section {
+        padding: 15px;
+        margin-top: -20px;
+    }
+
+    .contact-section h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-section p {
+        font-size: 0.9em;
+    }
+
+    .contact-box {
+        padding: 15px;
+    }
+
+    .support-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

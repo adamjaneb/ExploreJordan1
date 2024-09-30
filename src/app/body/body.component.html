@@ -66,7 +66,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
                     <a href="#">
-                        <img src="assets/blog1.jpg" alt="Image 1" class="img-fluid">
+                        <img [src]="blogService.blogImg1" alt="Image 1" class="img-fluid">
                     </a>
                     <h3>8 day trip</h3>
                     <p class="date">May 28, 2023</p>
@@ -75,7 +75,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
                     <a href="#">
-                        <img src="assets/blog2.png" alt="Image 2" class="img-fluid">
+                        <img [src]="blogService.blogImg2" alt="Image 2" class="img-fluid">
                     </a>
                     <h3>Hiking the Jordan Trail changed my life</h3>
                     <p class="date">April 22, 2022</p>
@@ -84,7 +84,7 @@
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
                     <a href="#">
-                        <img src="assets/blog3.jpg" alt="Image 3" class="img-fluid">
+                        <img [src]="blogService.blogImg3" alt="Image 3" class="img-fluid">
                     </a>
                     <h3>As Salt, Jordan listed on UNESCO heritage list</h3>
                     <p class="date">15 August, 2022</p>
@@ -92,8 +92,7 @@
             </div>
         </div>
         <div class="text-center mt-3">
-            <a href="#" class="btn button">View all blog posts</a>
+            <a routerLink="/blog" class="btn button">View all blog posts</a>
         </div>
-    
     </div>
 </div>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-body',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
@@ -32,4 +34,9 @@ export class BodyComponent implements OnInit{
   custom_packageImg : string = "assets/custom_package.png";
   loyalty_programImg : string = "assets/loyalty_program.jpg";
   ajloun : string = "assets/ajloun.png";
+
+  constructor(public blogService:BlogService){
+    
+  }
+
 }

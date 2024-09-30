@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import { BlogService } from '../services/blog.service';
+import { BlogService,BlogPost } from '../services/blog.service';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,RouterLink,RouterModule],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
-  constructor(public blogService: BlogService){
-    
-  }
+  blogPosts: BlogPost[] = [];
 
+  constructor(private blogService: BlogService) {
+    this.blogPosts = this.blogService.getBlogPosts();
+  }
 }

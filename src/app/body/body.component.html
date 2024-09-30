@@ -65,7 +65,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
-                    <a href="#">
+                    <a [routerLink]="['/blog-post', 1]">
                         <img [src]="blogService.blogImg1" alt="Image 1" class="img-fluid">
                     </a>
                     <h3>8 day trip</h3>
@@ -74,7 +74,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
-                    <a href="#">
+                    <a [routerLink]="['/blog-post', 2]">
                         <img [src]="blogService.blogImg2" alt="Image 2" class="img-fluid">
                     </a>
                     <h3>Hiking the Jordan Trail changed my life</h3>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="blog-post">
-                    <a href="#">
+                    <a [routerLink]="['/blog-post', 3]">
                         <img [src]="blogService.blogImg3" alt="Image 3" class="img-fluid">
                     </a>
                     <h3>As Salt, Jordan listed on UNESCO heritage list</h3>

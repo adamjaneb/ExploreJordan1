@@ -1,82 +1,22 @@
-<body>
+<div class="blog-section">
+    <div class="blog-header">
+        <h2>ExploreJordan Blog</h2>
+        <p>Sharing our travel expertise, local knowledge, and industry insights.</p>
+    </div>
 
-    <div class="blog-section">
-        <div class="blog-header">
-            <h2>ExploreJordan Blog</h2>
-            <p>Sharing our travel expertise, local knowledge, and industry insights.</p>
-        </div>
-    
-        <div class="d-flex">
-            <!-- Blog Post 1 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg1" alt="Hiking the Jordan Trail">
-                <div class="blog-details">
-                    <h3>Hiking the Jordan Trail changed my life – and I'm not alone</h3>
-                    <p>Experience the transformative power of Jordan's breathtaking landscapes and rich culture on this unforgettable hiking adventure.</p>
-                    <p class="date">Published on: May 28, 2023</p>
-                    <a href="#">Read more</a>
-                </div>
+    <div class="d-flex">
+        <div *ngFor="let post of blogPosts" class="blog-post">
+            <img [src]="post.imgSrc" [alt]="post.title">
+            <div class="blog-details">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+                <p class="date">Published on: {{ post.publishDate }}</p>
+                <a [routerLink]="['/blog-post', post.id]">Read more</a>
             </div>
-    
-            <!-- Blog Post 2 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg2" alt="As-Salt, Jordan">
-                <div class="blog-details">
-                    <h3>As-Salt, Jordan Listed on UNESCO World Heritage List</h3>
-                    <p>Discover the historical significance and architectural beauty of As-Salt, Jordan's newest UNESCO World Heritage site.</p>
-                    <p class="date">Published on: April 22, 2022</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-    
-            <!-- Blog Post 3 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg3" alt="8 Day Trip in Jordan">
-                <div class="blog-details">
-                    <h3>8 Day Trip</h3>
-                    <p>Plan your perfect 8-day journey through Jordan, exploring ancient wonders and natural beauty.</p>
-                    <p class="date">Published on: August 15, 2022</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-    
-            <!-- Blog Post 4 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg4" alt="Grandmother's House in Jordan">
-                <div class="blog-details">
-                    <h3>In Jordan, to Grandmother's House We Go</h3>
-                    <p>Experience the warmth of Jordanian hospitality and family traditions in this heartwarming journey.</p>
-                    <p class="date">Published on: November 17, 2023</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-    
-            <!-- Blog Post 5 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg5" alt="Dead Sea Wellness">
-                <div class="blog-details">
-                    <h3>The Lowest Point on Earth with the Highest Level of Wellness & Healing</h3>
-                    <p>Explore the rejuvenating properties of the Dead Sea and its world-renowned wellness treatments.</p>
-                    <p class="date">Published on: January 10, 2023</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-    
-            <!-- Blog Post 6 -->
-            <div class="blog-post">
-                <img [src]="blogService.blogImg6" alt="Bethany Beyond the Jordan">
-                <div class="blog-details">
-                    <h3>Experiencing Bethany Beyond the Jordan - The Site of Jesus' Baptism</h3>
-                    <p>Walk in the footsteps of history at this significant religious site and UNESCO World Heritage location.</p>
-                    <p class="date">Published on: November 25, 2021</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="email-info">
-            <p>Send your articles: <a href="mailto:blog&#64;explorejordan.com">blog&#64;explorejordan.com</a></p>
         </div>
     </div>
 
-</body>
+    <div class="email-info">
+        <p>Send your articles: <a href="mailto:blog&#64;explorejordan.com">blog&#64;explorejordan.com</a></p>
+    </div>
+</div>

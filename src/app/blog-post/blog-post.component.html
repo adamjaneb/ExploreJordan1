@@ -1,0 +1,6 @@
+<article class="blog-post" *ngIf="post">
+    <p class="article-date">{{ post.publishDate }}</p>
+    <h2 class="article-title">{{ post.title }}</h2>
+    <img [src]="post.imgSrc" [alt]="post.title">
+    <p [innerHTML]="post.description"></p>
+</article>

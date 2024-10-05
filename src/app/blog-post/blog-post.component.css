@@ -5,7 +5,7 @@ main{
 
 .blog-post {
     max-width: 800px;
-    margin: 120px auto 20px; /* Increase the margin-top value and add margin-bottom */
+    margin: 120px auto 20px; 
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -13,7 +13,7 @@ main{
 }
 
 .blog-post h2 {
-    margin-bottom: 20px; /* Increase the margin-bottom value */
+    margin-bottom: 20px; 
 }
 
 .blog-post img {

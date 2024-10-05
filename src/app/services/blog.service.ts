@@ -10,7 +10,7 @@ export interface BlogPost {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class BlogService {
 

@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
+import { CategoriesComponent } from './categories/categories.component';
+
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     NavbarComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    CategoriesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

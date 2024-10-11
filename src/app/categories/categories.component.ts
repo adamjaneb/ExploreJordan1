@@ -1,36 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgFor, CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [NgFor, CommonModule, HttpClientModule],  // Add HttpClientModule here
+  imports: [NgFor, CommonModule, HttpClientModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
 export class CategoriesComponent implements OnInit {
   apiUrl = environment.apiUrl;
-  tours: any[] = [];
+  items: any[] = [];
+  category: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute
+  ) {}
 
+  onImageLoad(imageUrl: string) {
+    console.log('Image loaded:', imageUrl);
+  }
   ngOnInit() {
-    this.fetchTours();
+    this.route.params.subscribe(params => {
+      this.category = params['category'];
+      this.fetchItems();
+    });
   }
 
-  fetchTours() {
-    console.log('Fetching tours...');  // Add this log
-    this.http.get<any[]>(`${this.apiUrl}/tours`)
+  fetchItems() {
+    this.http.get<any[]>(`${this.apiUrl}/${this.category}`)
       .subscribe({
         next: (response) => {
-          console.log('Tours fetched successfully:', response);  // Add this log
-          this.tours = response;
+          console.log(`${this.category} fetched successfully:`, response);
+          // Append the full path without /api
+          this.items = response.map(item => ({
+            ...item,
+            cover: `http://localhost:5241/assets/images/${item.cover}` // Correct URL
+          }));
         },
         error: (error) => {
-          console.error('Error fetching tours:', error);
+          console.error(`Error fetching ${this.category}:`, error);
         }
       });
-  }
+}
+
 }

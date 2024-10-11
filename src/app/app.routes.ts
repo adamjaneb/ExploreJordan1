@@ -9,9 +9,9 @@ import { CategoriesComponent } from './categories/categories.component';
 export const routes: Routes = [
   { path: '', component: BodyComponent },
   { path: 'contact', component: ContactUsComponent },
-  { path: 'home', component:BodyComponent},
-  { path: 'about-us', component:AboutUsComponent},
-  { path: 'blog', component:BlogComponent},
-  { path: 'blog-post/:id', component:BlogPostComponent},
-  { path: 'categories', component:CategoriesComponent}
-]
+  { path: 'home', component: BodyComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blog-post/:id', component: BlogPostComponent },
+  { path: 'categories/:category', component: CategoriesComponent }
+];

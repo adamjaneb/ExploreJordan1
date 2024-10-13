@@ -5,6 +5,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: '', component: BodyComponent },
@@ -13,5 +14,8 @@ export const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog-post/:id', component: BlogPostComponent },
-  { path: 'categories/:category', component: CategoriesComponent }
+  { path: 'categories/:category', component: CategoriesComponent },
+  { path: 'login', component: LoginComponent }
 ];
+
+

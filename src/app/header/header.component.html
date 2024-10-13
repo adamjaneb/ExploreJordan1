@@ -1,45 +1,61 @@
-<header class="container-fluid header">
-    <div class="row w-100 align-items-center g-2">
-        <!-- Logo -->
-        <div class="col-2 col-md-2 col-lg-2 logo">
-            <a routerLink="/home">
-                <img [src]="logoImg" alt="Logo" class="img-fluid logo-img">
-            </a>
-        </div>
-
-        <div class="d-none d-md-block col-md-2 col-lg-2"></div>
-        
-        <!-- Search Bar -->
-        <div class="col-6 col-md-4 col-lg-3 search-bar">
-            <form (submit)="onSearch(searchQuery)" #searchQuery="ngForm" class="w-100">
-                <div class="input-group">
-                    <input type="search" name="searchQuery" ngModel placeholder="Start your search" id="search-bar" class="form-control rounded-pill">
-                    <button type="submit" class="btn position-absolute search-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
-                            <path d="M0 0h24v24H0z" fill="none" />
-                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-                        </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <div class="d-none d-md-block col-md-2 col-lg-2"></div>
-
-        <!-- Language Selector -->
-        <div class="col-1 col-md-1 col-lg-1 lang">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
-                <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
-                <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
-            </svg>
-        </div>
-
-        <!-- Profile Icon -->
-        <div class="col-2 col-md-1 col-lg-1 signin">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            </svg>
-        </div>
+<header class="container-fluid py-2">
+  <div class="row align-items-center g-2">
+    <!-- Logo -->
+    <div class="col-3 col-md-2 text-center">
+      <a routerLink="/home">
+        <img [src]="logoImg" alt="Logo" class="img-fluid logo-img">
+      </a>
     </div>
+
+    <!-- Search Bar -->
+    <div class="col-6 col-md-6 search-bar">
+      <form (submit)="onSearch(searchQuery)" #searchQuery="ngForm" class="w-100">
+        <div class="position-relative">
+          <input type="search" name="searchQuery" ngModel placeholder="Start your search" id="search-bar" class="form-control rounded-pill">
+          <button type="submit" class="btn search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="col-1 col-md-2 col-lg-1 lang d-flex justify-content-center align-items-center">
+      <div class="language-selector position-relative" (click)="toggleTranslateDropdown($event)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+        </svg>
+        <div id="google_translate_element" [class.show-translate]="isTranslateVisible"></div>
+      </div>
+    </div>
+
+    <!-- Profile Icon -->
+    <div class="col-3 col-md-3 col-lg-2 signin d-flex justify-content-center align-items-center position-relative">
+      <div class="profile-icon" (click)="toggleDropdown($event)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+      </div>
+
+      <div class="dropdown-content" [class.show]="isDropdownVisible" [style.height]="dropdownHeight">
+        <ul class="navbar-nav">
+          <ng-container *ngIf="isAuthenticated; else loginTemplate">
+            <li><a routerLink="/account/manage" class="nav-link">Account</a></li>
+            <li><a routerLink="/your-ads" class="nav-link">Your Ads</a></li>
+            <li><a routerLink="/your-purchases" class="nav-link">Your Purchases</a></li>
+            <li><button (click)="logout()" class="nav-link btn btn-link">Logout</button></li>
+          </ng-container>
+          <ng-template #loginTemplate>
+            <li><a routerLink="/account/register" class="nav-link">Register</a></li>
+            <li><a routerLink="/login" class="nav-link">Login</a></li>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
